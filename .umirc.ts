@@ -4,6 +4,10 @@ export default defineConfig({
   nodeModulesTransform: {
     type: 'none',
   },
-  routes: [{ path: '/', component: '@/pages/index' }],
+  // layout: {},
+  // routes: [{ path: '/', component: '@/pages/index' }],
   fastRefresh: {},
+  webpack5: {},
+  dynamicImport: {},
+  mfsu: {},
 });
