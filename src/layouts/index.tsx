@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import './index.less';
 import { Link, useLocation } from 'umi';
+import { siderMenuLinks } from '@/localFiles/siderMenu';
+import './index.less';
 
 const { Header, Sider, Content } = Layout;
 
 export default ({ children }: any) => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const toggle = () => setCollapsed(!collapsed);
   const location = useLocation();
-  // console.log('location->', location);
 
   return (
-    <Layout>
+    <Layout className="layout-container">
       <Sider trigger={null} collapsible collapsed={collapsed}>
         <div className="logo" />
         <Menu theme="dark" mode="inline" selectedKeys={[location.pathname]}>
-          <Menu.Item key="/useToggle">
-            <Link to="/useToggle">useToggle</Link>
-          </Menu.Item>
+          {siderMenuLinks.map((link) => (
+            <Menu.Item key={link.path}>
+              <Link to={link.path}>{link.name}</Link>
+            </Menu.Item>
+          ))}
         </Menu>
       </Sider>
       <Layout className="site-layout">
