@@ -6,7 +6,7 @@ const App = () => {
   const { messages, appendMsg, setTyping } = useMessages([]);
 
   function handleSend(type: string, val: any) {
-    console.log('type, val->', type, val);
+    // console.log('type, val->', type, val);
 
     if (type === 'text' && val.trim()) {
       appendMsg({
