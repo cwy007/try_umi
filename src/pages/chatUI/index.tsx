@@ -1,5 +1,5 @@
-import '@chatui/core/es/styles/index.less';
 import Chat, { Bubble, useMessages } from '@chatui/core';
+import '@chatui/core/es/styles/index.less';
 import '@chatui/core/dist/index.css';
 
 const App = () => {
@@ -31,12 +31,21 @@ const App = () => {
     return <Bubble content={content.text} />;
   }
 
+  const toolbar = [
+    {
+      type: 'image',
+      title: '相册',
+      icon: 'image',
+    },
+  ];
+
   return (
     <Chat
       navbar={{ title: '智能助理' }}
       messages={messages}
       renderMessageContent={renderMessageContent}
       onSend={handleSend}
+      toolbar={toolbar}
     />
   );
 };
