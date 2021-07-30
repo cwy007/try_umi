@@ -39,6 +39,14 @@ const App = () => {
     },
   ];
 
+  const onToolbarClick = (item: any, event: any) => {
+    console.log('item->', item);
+
+    console.log('window.ChatSDK->', window.ChatSDK);
+
+    console.log('window.ChatSDK.version->', window.ChatSDK.version);
+  };
+
   return (
     <Chat
       navbar={{ title: '智能助理' }}
@@ -46,6 +54,7 @@ const App = () => {
       renderMessageContent={renderMessageContent}
       onSend={handleSend}
       toolbar={toolbar}
+      onToolbarClick={onToolbarClick}
     />
   );
 };
