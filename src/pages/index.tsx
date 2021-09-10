@@ -1,6 +1,5 @@
 import { Row, Col } from 'antd';
 import { NavLink, Prompt, useRouteMatch } from 'umi';
-import styles from './index.less';
 
 export default function IndexPage() {
   const match = useRouteMatch();
