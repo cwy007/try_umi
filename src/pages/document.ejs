@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>try-umi</title>
-    <script src="//g.alicdn.com/chatui/icons/0.3.0/index.js"></script>
+    <% if (context.title != null) { %>
+    <title><%= context.title %></title>
+    <% } %> <script src="//g.alicdn.com/chatui/icons/0.3.0/index.js"></script>
     <script src="//g.alicdn.com/chatui/sdk-v2/0.2.2/sdk.js"></script>
-</head>
-<body>
+  </head>
+
+  <body>
+    <!-- <div>
+      <pre><%= JSON.stringify(context) %></pre>
+    </div> -->
+
     <div id="<%= context.config.mountElementId || 'root' %>"></div>
-</body>
+  </body>
+
 </html>
