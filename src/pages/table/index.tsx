@@ -11,6 +11,9 @@ const Table = () => {
       <Paragraph>
         当需要对数据进行排序、搜索、分页、自定义操作等复杂行为时。
       </Paragraph>
+      <Link href="https://ant.design/components/table-cn/">
+        https://ant.design/components/table-cn/
+      </Link>
     </Typography>
   );
 };
