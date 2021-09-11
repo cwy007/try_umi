@@ -6,9 +6,10 @@ const { Title, Paragraph, Text, Link } = Typography;
 
 const Links = [
   { href: '/table/basic', name: '基本用法' },
-  { href: '/table/jsx', name: 'JSX风格的API', span: 4 },
+  { href: '/table/jsx', name: 'JSX风格的API', span: 3 },
   { href: '/table/rowSelection', name: '可选择' },
-  { href: '/table/rowSelectionAndOperation', name: '选择和操作', span: 4 },
+  { href: '/table/rowSelectionAndOperation', name: '选择和操作', span: 3 },
+  { href: '/table/rowSelectionCustom', name: '自定义选择项', span: 3 },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {

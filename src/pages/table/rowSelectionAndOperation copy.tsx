@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Table, Button } from 'antd';
+import { Table, Button, Typography } from 'antd';
 import { ColumnsType } from 'antd/lib/table';
 import { times } from 'lodash';
+
+const { Paragraph, Text } = Typography;
 
 const dataItem = {
   key: 0,
@@ -59,6 +61,14 @@ const rowSelectionAndOperation = () => {
 
   return (
     <div>
+      <Typography>
+        <Paragraph>
+          选择后进行操作，完成后清空选择，通过
+          <Text code>rowSelection.selectedRowKeys</Text>
+          来控制选中项。
+        </Paragraph>
+      </Typography>
+
       <div style={{ marginBottom: 16 }}>
         <Button
           type="primary"
