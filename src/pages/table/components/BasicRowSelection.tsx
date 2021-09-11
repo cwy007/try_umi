@@ -2,21 +2,6 @@ import React, { useState } from 'react';
 import { Table, Radio, Divider } from 'antd';
 import { ColumnsType } from 'antd/lib/table';
 
-const columns: ColumnsType<any> = [
-  {
-    title: 'Name',
-    dataIndex: 'name',
-    render: (text) => <a>{text}</a>,
-  },
-  {
-    title: 'Age',
-    dataIndex: 'age',
-  },
-  {
-    title: 'Address',
-    dataIndex: 'address',
-  },
-];
 const data = [
   {
     key: '1',
@@ -44,23 +29,43 @@ const data = [
   },
 ];
 
-// rowSelection object indicates the need for row selection
-const rowSelection = {
-  onChange: (selectedRowKeys, selectedRows) => {
-    console.log(
-      `selectedRowKeys: ${selectedRowKeys}`,
-      'selectedRows: ',
-      selectedRows,
-    );
-  },
-  getCheckboxProps: (record) => ({
-    disabled: record.name === 'Disabled User', // Column configuration not to be checked
-    name: record.name,
-  }),
-};
+type Key = string | number;
+type RowSelectionType = 'checkbox' | 'radio';
 
 const BasicRowSelection = () => {
-  const [selectionType, setSelectionType] = useState('checkbox');
+  const [selectionType, setSelectionType] =
+    useState<RowSelectionType>('checkbox');
+
+  const columns: ColumnsType<any> = [
+    {
+      title: 'Name',
+      dataIndex: 'name',
+      render: (text) => <a>{text}</a>,
+    },
+    {
+      title: 'Age',
+      dataIndex: 'age',
+    },
+    {
+      title: 'Address',
+      dataIndex: 'address',
+    },
+  ];
+
+  // rowSelection object indicates the need for row selection
+  const rowSelection = {
+    onChange: (selectedRowKeys: Key[], selectedRows: any[]) => {
+      console.log(
+        `selectedRowKeys: ${selectedRowKeys}`,
+        `selectedRows: ${selectedRows}`,
+      );
+    },
+    getCheckboxProps: (record: any) => ({
+      disabled: record.name === 'Disabled User', // Column configuration not to be checked
+      name: record.name, // checkbox 复选框的name 属性
+    }),
+  };
+
   return (
     <div>
       <Radio.Group

@@ -56,4 +56,5 @@ const Basic = () => {
   return <Table columns={columns} dataSource={basicData} />;
 };
 
+Basic.title = 'Basic Table';
 export default Basic;

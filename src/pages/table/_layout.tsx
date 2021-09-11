@@ -20,7 +20,22 @@ const TableLayout: React.FC<any> = ({ children }) => {
               {Links.map(({ href, name }) => (
                 <Col span={4} key={name}>
                   <li>
-                    <Link href={href}>{name}</Link>
+                    <NavLink
+                      to={href}
+                      style={{
+                        borderBottom: '2px solid transparent',
+                        paddingBottom: 25,
+                        color: 'rgba(0, 0, 0, 0.85)',
+                      }}
+                      activeStyle={{
+                        color: '#1890ff',
+                        borderBottom: '2px solid #1890ff',
+                        paddingBottom: 25,
+                        transition: 'all 0.3s',
+                      }}
+                    >
+                      {name}
+                    </NavLink>
                   </li>
                 </Col>
               ))}

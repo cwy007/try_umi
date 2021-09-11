@@ -4,11 +4,11 @@ import SpecialRowSelection from './components/SpecialRowSelection';
 
 const { TabPane } = Tabs;
 
-function callback(key) {
+function callback(key: string) {
   console.log(key);
 }
 
-const Demo = () => (
+const RowSelection = () => (
   <Tabs defaultActiveKey="1" onChange={callback}>
     <TabPane tab="BasicRowSelection" key="1">
       <BasicRowSelection />
@@ -19,4 +19,5 @@ const Demo = () => (
   </Tabs>
 );
 
-export default Demo;
+RowSelection.title = 'RowSelection';
+export default RowSelection;

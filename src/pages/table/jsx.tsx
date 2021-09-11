@@ -41,4 +41,5 @@ const Jsx = () => {
   );
 };
 
+Jsx.title = 'Jsx Style';
 export default Jsx;
