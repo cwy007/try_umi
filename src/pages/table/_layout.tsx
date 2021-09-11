@@ -6,8 +6,9 @@ const { Title, Paragraph, Text, Link } = Typography;
 
 const Links = [
   { href: '/table/basic', name: '基本用法' },
-  { href: '/table/jsx', name: 'JSX风格的API' },
+  { href: '/table/jsx', name: 'JSX风格的API', span: 4 },
   { href: '/table/rowSelection', name: '可选择' },
+  { href: '/table/rowSelectionAndOperation', name: '选择和操作', span: 4 },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
@@ -17,8 +18,8 @@ const TableLayout: React.FC<any> = ({ children }) => {
         <Paragraph>
           <ul>
             <Row>
-              {Links.map(({ href, name }) => (
-                <Col span={4} key={name}>
+              {Links.map(({ href, name, span }) => (
+                <Col span={span || 3} key={name}>
                   <li>
                     <NavLink
                       to={href}
