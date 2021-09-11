@@ -34,7 +34,7 @@ const columns: ColumnsType<any> = [
   },
 ];
 
-const rowSelectionAndOperation = () => {
+const RowSelectionAndOperation = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<any[]>([]); // Check here to configure the default column
   const [loading, setLoading] = useState(false);
 
@@ -90,5 +90,5 @@ const rowSelectionAndOperation = () => {
 };
 
 // 扩展路由属性
-rowSelectionAndOperation.title = '选择和操作';
-export default rowSelectionAndOperation;
+RowSelectionAndOperation.title = '选择和操作';
+export default RowSelectionAndOperation;
