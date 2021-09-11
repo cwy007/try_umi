@@ -6,8 +6,8 @@ export default defineConfig({
   },
   // layout: {},
   // routes: [{ path: '/', component: '@/pages/index' }],
-  // fastRefresh: {},
-  // webpack5: {},
-  // dynamicImport: {},
-  // mfsu: {},
+  fastRefresh: {},
+  webpack5: {},
+  dynamicImport: {},
+  mfsu: {},
 });

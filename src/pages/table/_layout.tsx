@@ -10,6 +10,7 @@ const Links = [
   { href: '/table/rowSelection', name: '可选择' },
   { href: '/table/rowSelectionAndOperation', name: '选择和操作', span: 3 },
   { href: '/table/rowSelectionCustom', name: '自定义选择项', span: 3 },
+  { href: '/table/head', name: '筛选和排序', span: 3 },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
