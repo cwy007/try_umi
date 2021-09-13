@@ -12,6 +12,7 @@ const Links = [
   { href: '/table/rowSelectionCustom', name: '自定义选择项', span: 3 },
   { href: '/table/head', name: '筛选和排序', span: 3 },
   { href: '/table/filterInTree', name: '树形筛选菜单' },
+  { href: '/table/multipleSorter', name: '多列排序' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
