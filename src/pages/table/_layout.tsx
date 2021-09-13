@@ -16,6 +16,7 @@ const Links = [
   { href: '/table/multipleSorter', name: '多列排序' },
   { href: '', name: 'divider', component: <Divider style={{ margin: 8 }} /> },
   { href: '/table/resetFilter', name: '可控的筛选和排序' },
+  { href: '/table/customFilterPanel', name: '自定义筛选菜单' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
@@ -27,7 +28,7 @@ const TableLayout: React.FC<any> = ({ children }) => {
             <Row>
               {Links.map(({ href, name, span, component }) =>
                 component ? (
-                  <Fragment key={name}>component</Fragment>
+                  <Fragment key={name}>{component}</Fragment>
                 ) : (
                   <Col span={span || 3} key={name}>
                     <li>
