@@ -21,6 +21,7 @@ const Links = [
   { href: '/table/size', name: '紧凑型' },
   { href: '/table/bordered', name: '带边框' },
   { href: '/table/expand', name: '可展开' },
+  { href: '/table/colspanRowspan', name: '表格行/列合并' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
