@@ -59,8 +59,9 @@ const columns: ColumnsType<any> = [
       },
     ],
     onFilter: (value, record) => {
+      // 指定过滤条件
+      // value 是指上面filters中选中的 value
       console.log(value, record);
-
       return record.address.indexOf(value) === 0;
     },
   },
