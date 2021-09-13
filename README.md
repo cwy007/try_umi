@@ -5,11 +5,16 @@
 Install dependencies,
 
 ```bash
-$ yarn
+yarn
 ```
 
 Start the dev server,
 
 ```bash
-$ yarn start
+yarn start
 ```
+
+## references
+
+1.[antd](https://ant.design/components/table-cn/#components-table-demo-multiple-sorter)
+2.[https://umijs.org/zh-CN](https://umijs.org/zh-CN)
