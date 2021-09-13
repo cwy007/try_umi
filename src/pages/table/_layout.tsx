@@ -17,6 +17,7 @@ const Links = [
   { href: '', name: 'divider', component: <Divider style={{ margin: 8 }} /> },
   { href: '/table/resetFilter', name: '可控的筛选和排序' },
   { href: '/table/customFilterPanel', name: '自定义筛选菜单' },
+  { href: '/table/ajax', name: '远程加载数据' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
