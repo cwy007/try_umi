@@ -18,6 +18,8 @@ const Links = [
   { href: '/table/resetFilter', name: '可控的筛选和排序' },
   { href: '/table/customFilterPanel', name: '自定义筛选菜单' },
   { href: '/table/ajax', name: '远程加载数据' },
+  { href: '/table/size', name: '紧凑型' },
+  { href: '/table/bordered', name: '带边框' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
