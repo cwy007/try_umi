@@ -20,6 +20,7 @@ const Links = [
   { href: '/table/ajax', name: '远程加载数据' },
   { href: '/table/size', name: '紧凑型' },
   { href: '/table/bordered', name: '带边框' },
+  { href: '/table/expand', name: '可展开' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
