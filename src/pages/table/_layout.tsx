@@ -23,6 +23,8 @@ const Links = [
   { href: '/table/expand', name: '可展开' },
   { href: '/table/colspanRowspan', name: '表格行/列合并' },
   { href: '/table/treeData', name: '树形数据展示' },
+  { href: '', name: 'divider2', component: <Divider style={{ margin: 8 }} /> },
+  { href: '/table/fixedHeader', name: '固定表头' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
