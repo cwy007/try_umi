@@ -22,6 +22,7 @@ const Links = [
   { href: '/table/bordered', name: '带边框' },
   { href: '/table/expand', name: '可展开' },
   { href: '/table/colspanRowspan', name: '表格行/列合并' },
+  { href: '/table/treeData', name: '树形数据展示' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
