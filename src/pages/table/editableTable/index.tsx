@@ -94,13 +94,6 @@ const EditableTable = () => {
     setDataSource(newData);
   };
 
-  const components = {
-    body: {
-      row: EditableRow,
-      cell: EditableCell,
-    },
-  };
-
   const columnsMap = columns.map((col) => {
     if (!col.editable) {
       return col;
@@ -109,10 +102,10 @@ const EditableTable = () => {
       ...col,
       // 设置单元格属性
       onCell: (record: DataType) => ({
-        record,
-        editable: col.editable,
-        dataIndex: col.dataIndex,
-        title: col.title,
+        record, // row 对应的数据
+        editable: col.editable, // 配置内容
+        dataIndex: col.dataIndex, // 配置内容
+        title: col.title, // 配置内容
         handleSave: handleSave,
       }),
     };
@@ -126,7 +119,12 @@ const EditableTable = () => {
 
       <Table
         // 覆盖默认的 table 元素
-        components={components}
+        components={{
+          body: {
+            row: EditableRow,
+            cell: EditableCell,
+          },
+        }}
         // 表格行的类名
         rowClassName={() => 'editable-row'}
         bordered

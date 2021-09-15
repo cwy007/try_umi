@@ -1,4 +1,4 @@
-import { Table, Input, Button, Popconfirm, Form, FormInstance } from 'antd';
+import { Form, FormInstance } from 'antd';
 import { createContext } from 'react';
 
 export const EditableContext = createContext<FormInstance<any> | null>(null);
@@ -14,6 +14,7 @@ const EditableRow: React.FC<EditableRowProps> = ({ index, ...props }) => {
   return (
     // component 设置 Form 渲染元素，为 false 则不创建 DOM 节点
     <Form form={form} component={false}>
+      {/* 每一行都有一个对应的 form 实例可以用 */}
       <EditableContext.Provider value={form}>
         <tr {...props} />
       </EditableContext.Provider>
