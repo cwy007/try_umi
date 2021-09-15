@@ -1,6 +1,6 @@
 import { Table, Button, Popconfirm } from 'antd';
-import EditableRow from './components/lo/EditableRow';
-import EditableCell from './components/lo/EditableCell';
+import EditableRow from './components/EditableRow';
+import EditableCell from './components/EditableCell';
 import './index.less';
 import React, { useState } from 'react';
 
