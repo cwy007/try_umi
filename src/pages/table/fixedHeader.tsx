@@ -58,4 +58,5 @@ const fixedHeader = () => {
   );
 };
 
+fixedHeader.title = '固定头';
 export default fixedHeader;

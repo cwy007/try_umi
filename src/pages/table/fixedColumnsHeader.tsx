@@ -8,7 +8,7 @@ const columns: ColumnsType<any> = [
     width: 100,
     dataIndex: 'name',
     key: 'name',
-    // （IE 下无效）列是否固定，可选 true (等效于 left) left right
+    // 固定列
     fixed: 'left',
   },
   {
@@ -18,13 +18,48 @@ const columns: ColumnsType<any> = [
     key: 'age',
     fixed: 'left',
   },
-  { title: 'Column 1', dataIndex: 'address', key: '1' },
-  { title: 'Column 2', dataIndex: 'address', key: '2' },
-  { title: 'Column 3', dataIndex: 'address', key: '3' },
-  { title: 'Column 4', dataIndex: 'address', key: '4' },
-  { title: 'Column 5', dataIndex: 'address', key: '5' },
-  { title: 'Column 6', dataIndex: 'address', key: '6' },
-  { title: 'Column 7', dataIndex: 'address', key: '7' },
+  {
+    title: 'Column 1',
+    dataIndex: 'address',
+    key: '1',
+    width: 150,
+  },
+  {
+    title: 'Column 2',
+    dataIndex: 'address',
+    key: '2',
+    width: 150,
+  },
+  {
+    title: 'Column 3',
+    dataIndex: 'address',
+    key: '3',
+    width: 150,
+  },
+  {
+    title: 'Column 4',
+    dataIndex: 'address',
+    key: '4',
+    width: 150,
+  },
+  {
+    title: 'Column 5',
+    dataIndex: 'address',
+    key: '5',
+    width: 150,
+  },
+  {
+    title: 'Column 6',
+    dataIndex: 'address',
+    key: '6',
+    width: 150,
+  },
+  {
+    title: 'Column 7',
+    dataIndex: 'address',
+    key: '7',
+    width: 150,
+  },
   { title: 'Column 8', dataIndex: 'address', key: '8' },
   {
     title: 'Action',
@@ -35,22 +70,17 @@ const columns: ColumnsType<any> = [
   },
 ];
 
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
+const data: any[] = [];
+for (let i = 0; i < 100; i++) {
+  data.push({
+    key: i,
+    name: `Edrward ${i}`,
     age: 32,
-    address: 'New York Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 40,
-    address: 'London Park',
-  },
-];
+    address: `London Park no. ${i}`,
+  });
+}
 
-const fixedColumns = () => {
+const fixedColumnsHeader = () => {
   return (
     <div>
       <Table
@@ -60,15 +90,13 @@ const fixedColumns = () => {
         // scrollToFirstRowOnChange 当分页、排序、筛选变化后是否滚动到表格顶部
         // x 设置横向滚动，也可用于指定滚动区域的宽，可以设置为像素值，百分比，true 和 'max-content'
         // y 设置纵向滚动，也可用于指定滚动区域的高，可以设置为像素值
-        scroll={{ x: 1300 }}
+        scroll={{ x: 1500, y: 300 }}
       />
 
       <Typography>
-        <Divider orientation="left">固定列</Divider>
+        <Divider orientation="left">固定头和列</Divider>
         <Paragraph>
-          对于列数很多的数据，可以固定前后的列，横向滚动查看其它数据，需要和
-          <Text code>scroll.x</Text> 配合使用。
-          <br />
+          适合同时展示有大量数据和数据列。
           <blockquote>
             若列头与内容不对齐或出现列重复，请指定固定列的宽度 width。
             <br />
@@ -88,5 +116,5 @@ const fixedColumns = () => {
   );
 };
 
-fixedColumns.title = '固定列';
-export default fixedColumns;
+fixedColumnsHeader.title = '固定头和列';
+export default fixedColumnsHeader;

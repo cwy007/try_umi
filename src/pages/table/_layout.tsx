@@ -26,6 +26,7 @@ const Links = [
   { href: '', name: 'divider2', component: <Divider style={{ margin: 8 }} /> },
   { href: '/table/fixedHeader', name: '固定表头' },
   { href: '/table/fixedColumns', name: '固定列' },
+  { href: '/table/fixedColumnsHeader', name: '固定头和列' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
