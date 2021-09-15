@@ -25,6 +25,7 @@ const Links = [
   { href: '/table/treeData', name: '树形数据展示' },
   { href: '', name: 'divider2', component: <Divider style={{ margin: 8 }} /> },
   { href: '/table/fixedHeader', name: '固定表头' },
+  { href: '/table/fixedColumns', name: '固定列' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
