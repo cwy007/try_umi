@@ -27,6 +27,7 @@ const Links = [
   { href: '/table/fixedHeader', name: '固定表头' },
   { href: '/table/fixedColumns', name: '固定列' },
   { href: '/table/fixedColumnsHeader', name: '固定头和列' },
+  { href: '/table/groupingColumns', name: '表头分组' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
