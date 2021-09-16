@@ -32,6 +32,8 @@ const Links = [
   { href: '/table/editableTableRow', name: '可编辑行' },
   { href: '/table/nestedTable', name: '嵌套子表格' },
   { href: '/table/DragSorting', name: '拖拽排序' },
+  { href: '', name: 'divider2', component: <Divider style={{ margin: 8 }} /> },
+  { href: '/table/DragSortingHandler', name: '拖拽手柄列' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {

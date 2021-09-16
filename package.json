@@ -24,6 +24,7 @@
     "@chatui/core": "^1.1.1",
     "ahooks": "^2.10.8",
     "antd": "4.17.0-alpha.2",
+    "array-move": "^4.0.0",
     "axios": "^0.21.4",
     "classnames": "^2.3.1",
     "immutability-helper": "^3.1.1",
@@ -34,6 +35,7 @@
     "react-dnd-html5-backend": "^14.0.1",
     "react-dom": "17.x",
     "react-highlight-words": "^0.17.0",
+    "react-sortable-hoc": "^2.0.0",
     "reqwest": "^2.0.5",
     "umi": "^3.5.13"
   },
