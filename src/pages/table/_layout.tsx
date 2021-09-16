@@ -31,6 +31,7 @@ const Links = [
   { href: '/table/editableTable', name: '可编辑单元格' },
   { href: '/table/editableTableRow', name: '可编辑行' },
   { href: '/table/nestedTable', name: '嵌套子表格' },
+  { href: '/table/DragSorting', name: '拖拽排序' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
