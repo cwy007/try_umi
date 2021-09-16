@@ -30,6 +30,7 @@ const Links = [
   { href: '/table/groupingColumns', name: '表头分组' },
   { href: '/table/editableTable', name: '可编辑单元格' },
   { href: '/table/editableTableRow', name: '可编辑行' },
+  { href: '/table/nestedTable', name: '嵌套子表格' },
 ];
 
 const TableLayout: React.FC<any> = ({ children }) => {
