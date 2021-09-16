@@ -20,38 +20,45 @@ for (let i = 0; i < 100; i++) {
   });
 }
 
+// 路由组件
 const EditableTable = () => {
-  const [form] = Form.useForm();
-  const [data, setData] = useState(originData);
-  const [editingKey, setEditingKey] = useState('');
+  const [form] = Form.useForm(); // form 实例，设置输入框的值
+  const [data, setData] = useState(originData); // table 数据源
+  const [editingKey, setEditingKey] = useState(''); // 正在编辑的行的 key
 
+  // 判断行 record 是否在编辑中
   const isEditing = (record: Item) => record.key === editingKey;
 
+  // 设置form fields 的值，每次只会显示三个字段 name, age, address
+  // 设置状态变量 editingKey
   const edit = (record: Partial<Item> & { key: React.Key }) => {
     form.setFieldsValue({ name: '', age: '', address: '', ...record });
     setEditingKey(record.key);
   };
 
+  // cancel 时将状态变量 editKey 清空，表示没有表格行处于编辑状态
   const cancel = () => {
     setEditingKey('');
   };
 
   const save = async (key: React.Key) => {
     try {
-      const row = (await form.validateFields()) as Item;
+      // validateFields 触发表单验证，返回form字段的值
+      const row = (await form.validateFields()) as Item; // ts 类型断言
 
-      const newData = [...data];
-      const index = newData.findIndex((item) => key === item.key);
+      const newData = [...data]; // table 数据源
+      const index = newData.findIndex((item) => key === item.key); // 当前编辑的行索引
       if (index > -1) {
+        // 修改操作
         const item = newData[index];
         newData.splice(index, 1, {
           ...item,
           ...row,
         });
         setData(newData);
-        setEditingKey('');
+        setEditingKey(''); // 清空编辑态
       } else {
-        newData.push(row);
+        newData.push(row); // 新增操作
         setData(newData);
         setEditingKey('');
       }
@@ -65,7 +72,7 @@ const EditableTable = () => {
       title: 'name',
       dataIndex: 'name',
       width: '25%',
-      editable: true,
+      editable: true, // 合并列配置 onCell，单元格属性
     },
     {
       title: 'age',
@@ -83,7 +90,7 @@ const EditableTable = () => {
       title: 'operation',
       dataIndex: 'operation',
       render: (_: any, record: Item) => {
-        const editable = isEditing(record);
+        const editable = isEditing(record); // 当前行是否处于编辑状态 - 显示不同按钮
         return editable ? (
           <span>
             <a
@@ -115,12 +122,13 @@ const EditableTable = () => {
     }
     return {
       ...col,
+      // 配置单元格属性
       onCell: (record: Item) => ({
-        record,
-        inputType: col.dataIndex === 'age' ? 'number' : 'text',
-        dataIndex: col.dataIndex,
-        title: col.title,
-        editing: isEditing(record),
+        record, // 行数据
+        inputType: col.dataIndex === 'age' ? 'number' : 'text', // 输入框的类型
+        dataIndex: col.dataIndex, // 字段名称
+        title: col.title, // 使用：表单验证时的错误提示信息中
+        editing: isEditing(record), // 判断当前数据 record 是否处于编辑状态
       }),
     };
   });
@@ -129,18 +137,19 @@ const EditableTable = () => {
     // component 为 false 时不会在浏览器上真正渲染 form 元素
     <Form form={form} component={false}>
       <Table
+        // 替换 table 的内部组件
         components={{
           body: {
             cell: EditableCell,
           },
         }}
-        bordered
+        bordered // 显示边框
         dataSource={data}
         columns={mergedColumns}
         rowClassName="editable-row"
         pagination={{
-          onChange: cancel,
-          pageSize: 5,
+          onChange: cancel, // 清空编辑状态
+          pageSize: 5, // 每页显示 5 条数据
         }}
       />
     </Form>
