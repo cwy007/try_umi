@@ -1,5 +1,5 @@
 const headerMenu = [
-  { path: '/', name: 'home' },
+  { path: '/', name: 'ahooks' },
   { path: '/table', name: 'table' },
 ];
 
