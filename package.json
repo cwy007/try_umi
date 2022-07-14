@@ -22,6 +22,8 @@
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "@chatui/core": "^1.1.1",
+    "ag-grid-community": "^28.0.2",
+    "ag-grid-react": "^28.0.0",
     "ahooks": "^2.10.8",
     "antd": "4.17.0-alpha.2",
     "array-move": "^4.0.0",
