@@ -1,9 +1,16 @@
 import React, { useCallback, useMemo, useRef, useState } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-alpine.css';
-// import MedalCellRenderer from './components/MedalCellRenderer.jsx';
+// import 'ag-grid-community/styles/ag-grid.css';
+// import 'ag-grid-community/styles/ag-theme-alpine.css';
+// import MedalCellRenderer from './MedalCellRenderer.js';
 // import TotalValueRenderer from './components/TotalValueRenderer.jsx';
+import './index.scss';
+
+// /Users/chanweiyan/try_umi/src/pages/agGrid/simpleCellRender/index.tsx
+
+const MedalCellRenderer = (props: any) => (
+  <span>{new Array(parseInt(props.value, 10)).fill('#').join('')}</span>
+);
 
 const GridExample = () => {
   const containerStyle = useMemo(() => ({ width: '100%', height: '100%' }), []);
@@ -12,7 +19,7 @@ const GridExample = () => {
   const [columnDefs, setColumnDefs] = useState([
     { field: 'athlete' },
     { field: 'year' },
-    // { field: 'gold', cellRenderer: MedalCellRenderer },
+    { field: 'gold', cellRenderer: MedalCellRenderer },
     // { field: 'silver', cellRenderer: MedalCellRenderer },
     // { field: 'bronze', cellRenderer: MedalCellRenderer },
     // { field: 'total', minWidth: 175, cellRenderer: TotalValueRenderer },
