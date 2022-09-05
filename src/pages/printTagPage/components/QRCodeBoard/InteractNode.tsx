@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import interact from 'interactjs';
 import { InteractNodeProps, Position, Node } from './type';
-import styles from './index.scss';
+import styles from './index.less';
 
 const CELL_HEIGHT = 10;
 const adjustLabel = (left, top) => {

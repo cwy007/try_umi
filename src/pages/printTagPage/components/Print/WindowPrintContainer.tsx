@@ -1,13 +1,10 @@
 /*
- * @Author: Duan | duan.he@xinheyun.com
- * @Date: 2020-05-13 11:02:18
- * @Last Modified by: Duan
- * @Last Modified time: 2020-05-13 11:05:06
+ * 打印预览元素的挂载点
  */
 import { useEffect, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 
-let printTagRoot = document.getElementById('print-transfer-root');
+let printTagRoot = document.getElementById('print-transfer-root') as HTMLElement;
 if (printTagRoot) {
   printTagRoot.innerHTML = '';
 } else {

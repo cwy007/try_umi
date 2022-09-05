@@ -3,7 +3,7 @@ import QRCode from 'qrcode';
 import cs from 'classnames';
 import Node from './Node';
 import { QRCodeBoardProps } from './type';
-import styles from './index.scss';
+import styles from './index.less';
 import { textToBase64Barcode } from './utils';
 
 const QRCodeBoard = ({

@@ -3,9 +3,11 @@
  */
 import React from 'react';
 // import { QRCodeBoard } from '@newcore/newcore-ui';
-import { TagPrintTemplateType } from '@/common/types/printTag';
+// import { TagPrintTemplateType } from '@/common/types/printTag';
 import WindowPrintContainer from './WindowPrintContainer';
 import './print.less';
+import QRCodeBoard from '../QRCodeBoard';
+import { TagPrintTemplateType } from '../../types';
 
 const Print = ({ templates }: { templates: TagPrintTemplateType[] }) => (
   <WindowPrintContainer>

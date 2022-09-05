@@ -1,4 +1,5 @@
-import { TagPrintTemplateType } from '@/common/types/printTag';
+// import { TagPrintTemplateType } from '@/common/types/printTag';
+import { TagPrintTemplateType } from "../../types";
 
 export const updatePrintSize = (template: TagPrintTemplateType) => {
   const size = template && template.value ? template.value.size : undefined;
@@ -23,4 +24,3 @@ export const updatePrintSize = (template: TagPrintTemplateType) => {
     document.body.append(printStyleElement);
   }
 };
-export default {};
