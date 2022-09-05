@@ -1,0 +1,49 @@
+:global(.printStyle) {
+  display: none;
+  td > div {
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+}
+@media print {
+  :global {
+    html,
+    body,
+    #root {
+      height: auto !important;
+      overflow: visible !important;
+      color: #000000 !important;
+    }
+  }
+
+  body *,
+  body *:after,
+  body *:before {
+    visibility: hidden;
+    box-sizing: border-box;
+    width: 0;
+    height: 0;
+  }
+
+  @page {
+    size: 100mm 50mm;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  :global(.printStyle) {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    min-height: auto !important;
+    display: table !important;
+  }
+
+  :global(.printStyle *) {
+    visibility: visible;
+    padding-top: 0 !important;
+    width: auto;
+  }
+}
